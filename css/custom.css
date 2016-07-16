@@ -1,0 +1,35 @@
+.jumbotron {
+    background-image: url(../images/pizza.jpe);
+    background-repeat: no-repeat;
+    background-size: 100%;
+} 
+a.btn.btn-primary {
+    background-color: orangered;
+    border-color: orangered;
+}
+
+a.btn.btn-default {
+    background-color: orangered;
+    border-color: orangered;
+    color: floralwhite;
+    opacity: 10%;
+}
+.foodItems {
+	padding: 20px;
+	/*margin-right: 50px;*/
+
+}
+div.jumbotron h1 {
+    color: floralwhite;
+    text-shadow: 2px 3px #888888;
+}
+.container h2 {
+	padding-top: 20px;
+}
+.container h4 {
+	padding-top: 10px;
+	font-weight: 600;
+}
+fieldset#visibilityPrepareBilling {
+	padding-left:20px;
+}
