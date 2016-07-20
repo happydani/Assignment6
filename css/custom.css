@@ -33,3 +33,6 @@ div.jumbotron h1 {
 fieldset#visibilityPrepareBilling {
 	padding-left:20px;
 }
+.error {
+	color: red;
+}

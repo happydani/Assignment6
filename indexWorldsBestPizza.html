@@ -1,341 +1,338 @@
-<!doctype html>
+ <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pizza Order Form - Assignment 6</title>
-    
-	<link href="css/custom.css" rel="stylesheet">
-	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-	
-	<!-- Custom styles for this template -->
-	<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-	
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Pizza Order Form - Assignment 6</title>
 
-<body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">World's Best Pizza</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
+		<link href="css/custom.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 
-	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div class="jumbotron">
-      <div class="container">
-        <h1>It's All About the Cheese!</h1>
-        <p></p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign up for Coupons &amp; Deals &nbsp; &raquo;</a></p>
-      </div>
-    </div>
+		<!-- Custom styles for this template -->
+		<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 
-	<div class="container">
-      
-      <form role="form" id="customerForm" action="#">
-      <!-- Row of columns -->
-		<div class="row">
-			 <div class="col-md-6">
-				 	<fieldset id="visibilityOrderToday">
-				 		<legend><h2>Order Today</h2></legend>
-					 <div class="form-group">
-						 <label for="myName">Name</label><br />
-						 <input width="20" id="myName" />
-					 </div>
-					 
-					 <div class="form-group">
-						 <label for="addressType">Address Type</label><br />
-						 <select class="form-control" id="addressType" width="20px">
-						 	 <option value="none">This is a ...</option>
-							 <option value="house">House</option>
-							 <option value="apartment" >Apartment</option>
-							 <option value="business">Business</option>
-							 <option value="campus">Campus</option>
-							 <option value="hotel">Hotel</option>
-							 <option value="dorm">Dorm</option>
-							 <option value="other">Other</option>
-						 </select>
-					 </div>
-					 <div class="form-group" id="hideOtherAddressType" style="display: none;" >
-						 <label for="otherAddressType">Other Address Type</label><br />
-						 <input size="20" id="otherAddressType" />
-					 </div>
-					 
-					 
-					 <div class="form-group">
-						 <label for="streetAddress1">Street Address</label><br />
-						 <input size="20" id="streetAddress1" /></div>
-					 <div class="form-group">
-						 <label for="streetAddress2">Apartment, suite, or room number</label><br />
-						 <input size="20" id="streetAddress2" /></div>
-					 <div class="form-group">
-						 <label for="city">City</label><br />
-						 <input size="20" id="city" />
-					 </div>
-					 <div class="form-group">
-						 <label for="state">State</label><br />
-						 <input size="20" id="state" />
-					 </div>
-					 <div class="form-group">
-						 <label for="zip">Zip Code</label><br />
-						 <input size="20" id="zip" />
-					 </div>
-					 <div class="form-group">
-						 <label for="phone">Phone Number</label><br />
-						 <input size="20" id="phone" />
-					 </div>
-					 <div class="form-group">
-						 <label for="myEmail">e-Mail</label><br />
-						 <input size="20" id="myEmail" /></div>
-						 <!--<p><input type="submit" value="Submit form" /></p>-->
-						 
-						 <div class="form-group">
-							 <a id="btn1" href="#visibilityBuildPizza" type="submit" class="btn btn-default" role="button">Build my Pizza &nbsp; &raquo;</a>
-						 </div>
-						 
-					</fieldset> <!--visibilityOrderToday-->
-					
-					
-					
-					<fieldset id="visibilityBuildPizza">
-			 			
-				 		<legend><h2>Build the World's Greatest Pizza!</h2></legend>
-				 		<div class="form-group">
-						 <div class="radio">
-							<label>
-							  <input type="radio" name="optionsRadios" id="handTossed" value="handTossed" checked>
-							  Hand Tossed
-							</label>
-						 </div>
-						 <div class="radio">
-							<label>
-							  <input type="radio" name="optionsRadios" id="thinCrust" value="Thin Crust">
-							  Thin Crust
-							</label>
-						 </div>
-						 <div class="radio">
-							<label>
-							  <input type="radio" name="optionsRadios" id="newYork" value="newYork">
-							  New York Style
-							</label>
-						 </div>
-						 <div class="radio">
-							<label>
-							  <input type="radio" name="optionsRadios" id="glutenFree" value="glutenFree">
-							  Gluten Free
-							</label>
-						 </div>    
-            	 </div>
-            
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">World's Best Pizza</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<form class="navbar-form navbar-right">
 						<div class="form-group">
-							 <select class="form-control" id="sizeCost" width="20px">
-								<option value="selectSizeCost">Please select size</option>
-							 </select>
-					  </div> 
-					  <div class="form-group">
-							 <select class="form-control" id="cheeseOption" width="20px">
-								<option value="selectCheese">Please select cheese option</option>
-							 </select>
-					  </div>
-					  <div class="form-group">
-							 <select class="form-control" id="sauceOption" width="20px">
-								<option value="selectSauce">Please select sauce option</option>
-							 </select>
-					  </div> 
-					  <h4>Select Additional Ingredients (99&cent; ea.)</h4>
-					  <div class="form-group">
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">pepperoni
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">sausage
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">ham
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">bacon
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">salami
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">peppers
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">olives
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">jalapenos
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">mushrooms
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">pineapple
-							 </label>
-						  </div>
-						  <div class="checkbox">
-							 <label>
-								<input type="checkbox">onion
-							 </label>
-						  </div>
+							<input type="text" placeholder="Email" class="form-control">
 						</div>
 						<div class="form-group">
-							<a id="btn2" href="#visibilityPrepareBilling" type="submit" class="btn btn-default" role="button">Build my Pizza &nbsp; &raquo;</a>
+							<input type="password" placeholder="Password" class="form-control">
 						</div>
-					</fieldset> <!--visibilityBuildPizza-->
-				 
-			 </div> <!--end first column-->
-			 
-			 
-			 <div class="col-md-6" >
-			 	<aside id="visibilityImageSet">
-					<a href="#"><img class="foodItems" src="images/newYork.jpe" alt="pizza pies" /></a>
+						<button type="submit" class="btn btn-success">Sign in</button>
+					</form>
+				</div><!--/.navbar-collapse -->
+			</div>
+		</nav>
 
-					<a href="#"><img class="foodItems" src="images/pies.jpe" alt="pizza pies" /></a>
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<div class="container">
+				<h1>It's All About the Cheese!</h1>
+				<p></p>
+				<p><a class="btn btn-primary btn-lg" href="#" role="button">Sign up for Coupons &amp; Deals &nbsp; &raquo;</a></p>
+			</div>
+		</div>
 
-					<a href="#"><img class="foodItems" src="images/pizza.jpe" alt="pizza pies" /></a>
-
-	<!--			<a href="#"><img class="foodItems" src="images/glutenfree.jpg" max-width="50%" max-height="50%" alt="pizza pies" /></a>-->
-				 </aside>
-				 
-				 <fieldset id="visibilityPrepareBilling">
-				 	<legend><h2>Billing Information</h2></legend>
-					<div class="form-group">
-					 	<div class="checkbox">
-						  <label>
-							 <input type="checkbox">Same as delivery information?
-						  </label>
-						</div>
-					 </div>				 
-					 <div class="form-group">
-						 <label for="bname">Name (as displayed on card)</label><br />
-						 <input width="20" id="bname" />
-					 </div>
-					 <div class="form-group">
-						 <label for="bstreetAddress1">Billing Street Address</label><br />
-						 <input size="20" id="bstreetAddress1" /></div>
-					 <div class="form-group">
-						 <label for="bstreetAddress2">Apartment, suite, or room number</label><br />
-						 <input size="20" id="bstreetAddress2" /></div>
-					 <div class="form-group">
-						 <label for="bcity">City</label><br />
-						 <input size="20" id="bcity" />
-					 </div>
-					 <div class="form-group">
-						 <label for="bstate">State</label><br />
-						 <input size="20" id="bstate" />
-					 </div>
-					 <div class="form-group">
-						 <label for="bzip">Zip Code</label><br />
-						 <input size="20" id="bzip" />
-					 </div>
-					 <div class="form-group">
-						 <label for="phone">Phone Number</label><br />
-						 <input size="20" id="bphone" />
-					 </div>
-
-					 <!--<p><input type="submit" value="Submit form" /></p>-->
-					 <div class="form-group">
-							<a id="btn3" href="#visibilityCreditCardInfo" type="submit" class="btn btn-default" role="button">Go Ahead and Bill Me &nbsp; &raquo;</a>
-					 </div>	
-				 </fieldset> <!-- visibilityPrepareBilling -->
-				 
-				 <fieldset id="visibilityCreditCardInfo">
-				 	<legend><h2>Credit Card Information</h2></legend>
-					<div class="form-group">
-						 <label for="creditCardNum">Credit Card Number</label><br />
-						 <input size="20" id="creditCardNum" />
-					 </div>
-					 <div class="form-group">
-						 <label for="CVV">CVV</label><br />
-						 <input size="20" id="CVV" />
-					 </div>
-					<div class="form-group">
-							<select class="form-control"  id="ccMonth" width="20px">
-							  <option value="January">Expiry Month</option>
-							</select>
-					 </div> 
-					 <div class="form-group">
-							<select class="form-control" id="ccYear" width="20px">
-							  <option value="2017">Expiry Year</option>
-							</select>
-					 </div>
-					 <div class="form-group">
-						<a id="btn4" href="#thankyou" type = "submit" class="btn btn-primary btn-lg" role="button">Place my Order &nbsp; &raquo;</a>
-					 </div>	
-				 </fieldset> <!-- visibilityCreditCardInfo -->
-				 
-			 </div> <!--end second  column-->
-			 <div id="thankyou">Your order has been received. You should be eating it in 30-45 short minutes!</div>
-			 
-		</div> <!-- end row -->
-		</form> 
-
-		 <hr>
-
-		 <footer>
-			 <p>&copy; 2016 Lightshine Multimedia. All rights reserved.</p>
-		 </footer>
-	</div> <!-- container -->
+		<div class="container">
+			<!--For test purposes: <form name="myForm" action="#" >
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit" id="btn5">
+</form>-->
 
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-   
-	<!-- do I need this line? -->
-	<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<!--	<script type="text/javascript" src="js/scriptAssignment6a.js"></script>-->
-	<script type="text/javascript" src="js/scriptAssignment6b.js"></script>
-													
-</body>
+			<form role="form" id="customerOrderForm" action="#" onsubmit="return validateForm()">
+				<!-- Row of columns -->
+				<div class="row">
+					<div class="col-md-6">
+						<fieldset class="fset" id="orderToday">
+							<legend><h2>Order Today</h2></legend>
+							<div class="form-group">
+								<label for="myName">Name</label><br />
+								<input class="reqd" width="20" id="myName" name="myName" />
+							</div>
+
+							<div class="form-group">
+								<label for="addressType">Address Type</label><br />
+								<select class="reqd" class="form-control" id="addressType" width="20px">
+									<option value="house">House</option>
+									<option value="apartment" >Apartment</option>
+									<option value="business">Business</option>
+									<option value="campus">Campus</option>
+									<option value="hotel">Hotel</option>
+									<option value="dorm">Dorm</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+							<div class="optional" class="form-group" id="hideOtherAddressType" style="display: none;" >
+								<label for="otherAddressType">Other Address Type</label><br />
+								<input class="reqd" size="20" id="otherAddressType" />
+							</div>
+
+
+							<div class="form-group">
+								<label for="streetAddress1">Street Address</label><br />
+								<input class="reqd" size="20" id="streetAddress1" /></div>
+							<div class="form-group">
+								<label for="streetAddress2" id="buildPizza">Apartment, suite, or room number</label><br /> <!--move buildPizza to below when done testing-->
+								<input class="optional" size="20" id="streetAddress2" />&nbsp;
+							</div>
+							<div class="form-group">
+								<label for="zip">Zip Code</label><br />
+								<input class="reqd" size="20" id="zip" />
+							</div>
+							<div class="form-group">
+								<label for="phone">Phone Number</label><br />
+								<input class="reqd" size="20" id="phone" />
+							</div>
+							<div class="form-group">
+								<label for="myEmail">e-Mail</label><br />
+								<input class="reqd" size="20" id="myEmail" />
+							</div>
+							<p id = "err"></p>
+							
+							<div class="form-group">
+								<a id="btn1" href="#buildPizza" type="submit" class="btn btn-default" role="button">Build my Pizza &nbsp; &raquo;</a>
+							</div>
+							
+
+						</fieldset> <!--orderToday-->
+
+
+
+						<fieldset class="fset" > <!-- really goes here but removed for testing id="buildPizza"-->
+
+							<legend><h2>Build the World's Greatest Pizza!</h2></legend>
+							<div class="form-group">
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsRadios" id="handTossed" value="handTossed" checked>
+										Hand Tossed
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsRadios" id="thinCrust" value="Thin Crust">
+										Thin Crust
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsRadios" id="newYork" value="newYork">
+										New York Style
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsRadios" id="glutenFree" value="glutenFree">
+										Gluten Free
+									</label>
+								</div>    
+							</div>
+
+							<div class="form-group">
+								<select class="form-control" id="sizeCost" width="20px">
+									<option value="selectSizeCost">Please select size</option>
+								</select>
+							</div> 
+							<div class="form-group">
+								<select class="form-control" id="cheeseOption" width="20px">
+									<option value="selectCheese">Please select cheese option</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<select class="form-control" id="sauceOption" width="20px">
+									<option value="selectSauce">Please select sauce option</option>
+								</select>
+							</div> 
+							<h4>Select Additional Ingredients (99&cent; ea.)</h4>
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">pepperoni
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">sausage
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">ham
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">bacon
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">salami
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">peppers
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">olives
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">jalapenos
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">mushrooms
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">pineapple
+									</label>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">onion
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<a id="btn2" href="#prepareBilling" type="submit" class="btn btn-default" role="button">Here, Let me Pay &nbsp; &raquo;</a>
+							</div>
+						</fieldset> <!--buildPizza-->
+
+					</div> <!--end first column-->
+
+					<div class="col-md-6" >
+						<aside id="imageSet">
+							<a href="#"><img class="foodItems" src="images/newYork.jpe" alt="pizza pies" /></a>
+
+							<a href="#"><img class="foodItems" src="images/pies.jpe" alt="pizza pies" /></a>
+
+							<a href="#"><img class="foodItems" src="images/pizza.jpe" alt="pizza pies" /></a>
+						</aside>
+
+						<fieldset class="fset" id="prepareBilling">
+							<legend><h2>Billing Information</h2></legend>
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox">Same as delivery information?
+									</label>
+								</div>
+							</div>				 
+							<div class="form-group">
+								<label for="bname">Name (as displayed on card)</label><br />
+								<input width="20" id="bname" />
+							</div>
+							<div class="form-group">
+								<label for="bstreetAddress1">Billing Street Address</label><br />
+								<input size="20" id="bstreetAddress1" /></div>
+							<div class="form-group">
+								<label for="bstreetAddress2">Apartment, suite, or room number</label><br />
+								<input size="20" id="bstreetAddress2" />&nbsp;</div>
+							<div class="form-group">
+								<label for="bcity">City</label><br />
+								<input size="20" id="bcity" />
+							</div>
+							<div class="form-group">
+								<label for="bstate">State</label><br />
+								<input size="20" id="bstate" />
+							</div>
+							<div class="form-group">
+								<label for="bzip">Zip Code</label><br />
+								<input size="20" id="bzip" />
+							</div>
+							<div class="form-group">
+								<label for="phone">Phone Number</label><br />
+								<input size="20" id="bphone" />
+							</div>
+
+							<!--<p><input type="submit" value="Submit form" /></p>-->
+							<div class="form-group">
+								<a id="btn3" href="#creditCardInfo" type="submit" class="btn btn-default" role="button">Go Ahead and Bill Me &nbsp; &raquo;</a>
+							</div>	
+						</fieldset> <!-- prepareBilling -->
+
+						<fieldset class="fset" id="creditCardInfo">
+							<legend><h2>Credit Card Information</h2></legend>
+							<div class="form-group">
+								<label for="creditCardNum">Credit Card Number</label><br />
+								<input size="20" id="creditCardNum" />
+							</div>
+							<div class="form-group">
+								<label for="CVV">CVV</label><br />
+								<input size="20" id="CVV" />
+							</div>
+							<div class="form-group">
+								<select class="form-control"  id="ccMonth" width="20px">
+									<option value="January">Expiry Month</option>
+								</select>
+							</div> 
+							<div class="form-group">
+								<select class="form-control" id="ccYear" width="20px">
+									<option value="2017">Expiry Year</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<a id="btn4" href="#thankyou" type = "submit" class="btn btn-primary btn-lg" role="button">Place my Order &nbsp; &raquo;</a>
+							</div>	
+						</fieldset> <!-- creditCardInfo -->
+
+					</div> <!--end second  column-->
+					<div id="thankyou">Your order has been received. You should be eating it in 30-45 short minutes!</div>
+
+
+				</div> <!-- end row -->
+			</form> 
+
+			<hr>
+
+			<footer>
+				<p>&copy; 2016 Lightshine Multimedia. All rights reserved.</p>
+			</footer>
+		</div> <!-- container -->
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+		<!-- do I need this line? -->
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<!--	<script type="text/javascript" src="js/scriptAssignment6a.js"></script>-->
+		<script type="text/javascript" src="js/scriptAssignment6.js"></script>
+
+	</body>
 </html>
