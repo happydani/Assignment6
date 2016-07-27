@@ -1,169 +1,100 @@
-/*global init, btn1, btn2, btn3, btn4, validateForm, isValid, writeError, removeError, addressType, hideField*/
+/*global launchProgram, validateSimpleCharField, addressType*/
 var W3CDOM = (document.getElementsByTagName && document.createElement);
 var VALID_EMAIL_REGEX = "^[^\\W][a-zA-Z0-9\\_\\-\\.]+([a-zA-Z0-9\\_\\-\\.]+)*\\@[-a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)*\\.[a-zA-Z]{2,4}$";
-document.addEventListener("DOMContentLoaded", init, false);
-
-
-/*---------------------------Validation---------------------------------*/
-function init() {
+document.addEventListener("DOMContentLoaded", launchProgram, false);
+/*----------------Initialize Customer Objects--------------*/
+function launchProgram() {
 	'use strict';
-	window.addEventListener("load", function () {
-		btn1.addEventListener("click", validateForm, false);
-		/*btn2.addEventListener("click", validateForm, false);
-		btn3.addEventListener("click", validateForm, false);
-		btn4.addEventListener("click", validateForm, false);*/
-		/*function myFunction () {
-			window.console.log(this.innerHTML);
-		}*/
-	}, false);
-	 
-	function validateForm() {
-		var resultOptional = "",
-			resultRequired = "",
-			i = 0,
-			j = 0,
-			x = '',
-			text = "",
-			opt = document.getElementsByClassName("optional"),
-			rqd = document.getElementsByClassName("reqd");
+	var customer = {}; // the customer object
+	
+	/*----------------Launch Customer Objects--------------*/
+	function launchCustomer() {
+		//make sure to handle otherAddressType differently
+		var myName = document.getElementById('myName'),
+			addressType = document.getElementById('addressType'),
+			otherAddressType = document.getElementById('otherAddressType'),
+			streetAddress1 = document.getElementById('streetAddress1'),
+			aptSteRoom = document.getElementById('aptSteRoom'),
+			city = document.getElementById('city'),
+			state = document.getElementById('state'),
+			zip = document.getElementById('zip'),
+			phone = document.getElementById('phone'),
+			myEmail = document.getElementById('myEmail');
+		/*----------------Hide/Show 'Other Address' Types--------------*/
+		function hideField() {
 
-		for (j = 0; j < opt.length; j += 1) {
-			if (opt.item(j).tagName === 'INPUT') {
-				resultOptional += opt.item(j).id + " = " + opt.item(j).value + '\n';
+			var x = document.getElementById("addressType").value;
+			if (x === "other") {
+				document.getElementById("hideOtherAddressType").style.display = 'block';
+			} else {
+				document.getElementById("hideOtherAddressType").style.display = 'none';
 			}
 		}
-		
-		for (i = 0; i < rqd.length; i += 1) {
-			if (!rqd.item(i).value) {
-				writeError(rqd.item(i), 'This field is required');
+		//window.console.log(hideField);
+		//window.console.dir(myName);
+		myName.onblur = function () {
+			window.console.log(myName.value);
+			var myInput = myName.value;
+			if (validateSimpleAlphaCharField(myInput) === true) {
+				customer.myName = myInput;
+			} else {
+				// it's false so create html message "invalid input, please use alphabetic characters A-Z"
+				document.getElementById("div")
+				document.getElementById().myName.id.innerHTML('Oops! Please only use alphabetic characters for your name');
 			}
-			if (rqd.item(i).value === '') {
-				window.console.log(rqd.item(i).id + " is required");
-				x = rqd.item(i).id + " is required";
-				document.getElementById("err").innerHTML = x;
-				
-				if (rqd.item(i).tagName === 'INPUT') {
-					resultRequired += rqd.item(i).id + " = " +   rqd.item(i).value + '\n ';
-				}
-			} /* end checking empty fields */
+		};
+		addressType.addEventListener("change", hideField, false);
+		// populate remaining form fields
+	} /* end launchCustomer */
+	
+	function validateSimpleCharField(input) {
+		// declare local variables 
+		// including a boolean (validInput) initially set to true 
+		var validInput = true, //need a var to hold the regex equation
+			regex = '^[A-Za-z]$';
+		//test whether 'input' has valid alpha characters (and no numbers etc)
+		// if input is valid (test against regex)
+		if (input === regex) {
+			//create a property for (input) in the Customer object for future use will take place in calling function
+			validInput = true;
+		} else {
+			validInput = false;
 		}
-		window.console.log('resultOptional = ' + resultOptional);
-		window.console.log('resultRequired = ' + resultRequired);
-
+		//return (validInput) that says whet her valid or result 
+		return validInput;
 	}
-}
 
-	
-	/*--------------------Show Other Address Types-------------------------*/
-	
-//addressType.addEventListener("change", hideField, false);
-	
-function removeError() {
-	'use strict';
-/*	this.className = this.className.substring(0, this.className.lastIndexOf(' '));
-	this.parentNode.removeChild(this.hasError);
-	this.hasError = null;
-	this.onchange = null;*/
-}
+	function validateSimpleNumberField(input) {
+		// declare local variables 
+		// including a boolean (validInput) initially set to true 
+		// and one for assigning the input to a one with local scope if I plan on saving it (which I think I should so I can pass it back later to billing if the customer checks it's the same as the customer's contact info)
+		var validInput = true;
+		//test whether 'input' has valid alpha characters (and no numbers etc)
+		// if input is valid create an Object for that input
+		// if it's false create html message "invalid input, please use alphabetic characters A-Z"
+		if (validateSimpleCharField(input)) {
+			validInput = false;
+		}
+		//return (validInput) that says whether valid or result or not and maybe one for
+		return validInput;
+	}
 
-	/*--------------------	Write Error	--------------------------*/
+/*--------------------- Execute the logic ---------------------*/
 
-function writeError(obj, message) {
+	launchCustomer();
+
+	//	initPizzaOrder();
+	//	initBilling();
+	//	initCreditCard();
+} // end launchProgram function 
+/*---------------- Alternative Customer Collection--------------*/
+/*function customerInfo () {	
+	// this function will store the customer data and validate on clicking the button rather than testing each field as the customer inputs data on blur.
+	
 	"use strict";
-	var validForm = false,
-		sp = document.createElement('span');
-	if (obj.hasError) {
-		return;
-	}
-	if (W3CDOM) {
-		obj.className += ' error';
-		obj.onchange = removeError;
-//		var sp = document.createElement('span');
-		sp.className = 'error';
-		sp.appendChild(document.createTextNode(message));
-		obj.parentNode.appendChild(sp);
-		obj.hasError = sp;
-	} else {
-		errorstring += obj.name + ': ' + message + '\n';
-		obj.hasError = true;
-	}
-//	if (!firstError)
-//		firstError = obj; 
+	var orderToday = document.getElementById('orderToday');
+	var btnBuildPizza = orderToday.getElementById('btnBuildPizza');
+
+	btnBuildPizza.addEventListener("click", validateForm, false);
 }
-
-/*--------------------	isValid 	--------------------------*/
-function isValid() {
-	'use strict';
-	
-	window.console.log("Got inside isValid");
-	var i = 0,
-		validForm = true,
-		firstError = null,
-		errorstring = '',
-		regex = '',
-		elem = document.forms["fs1"].elements;
-	/*
-	window.console.log('elem = ' + document.forms[0].elements);
-	for (i = 0; i < elem.length; i += 1) {
-		if (!elem[i].value) {
-			writeError(elem[i], 'This field is required');
-		}
-	}
-	if (elem.myEmail.value.indexOf('@') === -1) {
-		regex = VALID_EMAIL_REGEX;
-		writeError(elem.myEmail, 'Valid email address required');
-	}
-	if (!W3CDOM) {
-		window.alert(errorstring);
-	}
-	if (firstError) {
-		firstError.focus();
-	}
-	if (validForm) {
-		window.alert('All data is valid!');
-	} else {
-		window.console.log("Everything looks good!");
-	}*/
-	return false;
-}
-
-
-/*--------------------Show Other Address Types--------------------------*/
-/*function hideField() {
-	
-	'use strict';
-	var x = document.getElementById("addressType").value;
-	if (x === "other") {
-		document.getElementById("hideOtherAddressType").style.display = 'block';
-	} else {
-		document.getElementById("hideOtherAddressType").style.display = 'none';
-	}
-}
-// original
-function myValidate() {
-	document.getElementById("buildPizza");
-	window.console.log("Got inside validator");
-	validForm = true;
-	firstError = null;
-	errorstring = '';
-	var elem = document.forms[0].elements;
-	for (var i=0; i < elem.length; i++) {
-		if (!elem[i].value)
-			writeError(elem[i],'This field is required');
-	}
-	if (elem['email'].value.indexOf('@') == -1) {
-		writeError(elem['email'],'This is not a valid email address');}
-	if (!W3CDOM) {
-		alert(errorstring);}
-	if (firstError) {
-		firstError.focus();}
-	if (validForm) {
-		alert('All data is valid!');}
-	else {
-		console.log("Everything looks good!")
-	}
-	return false;
-}
-   */
-
-
+*/

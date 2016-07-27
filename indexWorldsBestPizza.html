@@ -72,7 +72,7 @@ Name: <input type="text" name="fname">
 							<legend><h2>Order Today</h2></legend>
 							<div class="form-group">
 								<label for="myName">Name</label><br />
-								<input class="reqd" width="20" id="myName" name="myName" />
+								<input class="reqd" width="20" id="myName" name="myName" /><span id="errSimpAlpha Msg"></span>
 							</div>
 
 							<div class="form-group">
@@ -96,9 +96,17 @@ Name: <input type="text" name="fname">
 							<div class="form-group">
 								<label for="streetAddress1">Street Address</label><br />
 								<input class="reqd" size="20" id="streetAddress1" /></div>
+							<div class="form-group" id="buildPizza">
+								<label for="aptSteRoom">Apartment, suite, or room number</label><br /> <!--move buildPizza to below when done testing-->
+								<input class="optional" size="20" id="aptSteRoom" />&nbsp;
+							</div>
 							<div class="form-group">
-								<label for="streetAddress2" id="buildPizza">Apartment, suite, or room number</label><br /> <!--move buildPizza to below when done testing-->
-								<input class="optional" size="20" id="streetAddress2" />&nbsp;
+								<label for="city">City</label><br />
+								<input class="reqd" size="20" id="city" />
+							</div>
+							<div class="form-group">
+								<label for="state">State</label><br />
+								<input class="reqd" size="20" id="state" />
 							</div>
 							<div class="form-group">
 								<label for="zip">Zip Code</label><br />
@@ -115,7 +123,7 @@ Name: <input type="text" name="fname">
 							<p id = "err"></p>
 							
 							<div class="form-group">
-								<a id="btn1" href="#buildPizza" type="submit" class="btn btn-default" role="button">Build my Pizza &nbsp; &raquo;</a>
+								<a id="btnBuildPizza" href="#buildPizza" type="submit" class="btn btn-default" role="button">Build my Pizza &nbsp; &raquo;</a>
 							</div>
 							
 
