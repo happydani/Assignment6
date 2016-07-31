@@ -71,13 +71,14 @@ Name: <input type="text" name="fname">
 						<fieldset class="fset" id="orderToday">
 							<legend><h2>Order Today</h2></legend>
 							<div class="form-group">
-								<label for="myName">Name</label><br />
-								<input class="reqd" width="20" id="myName" name="myName" /><span id="errSimpAlpha Msg"></span>
+								<label for="myName">Name <span>*</span></label><br />
+								<input class="reqd" width="20" id="myName" name="myName" /><p></p>
 							</div>
 
 							<div class="form-group">
-								<label for="addressType">Address Type</label><br />
+								<label for="addressType">Address Type <span>*</span></label><br />
 								<select class="reqd" class="form-control" id="addressType" width="20px">
+									<option value="none">Select type of residence...</option>
 									<option value="house">House</option>
 									<option value="apartment" >Apartment</option>
 									<option value="business">Business</option>
@@ -85,48 +86,46 @@ Name: <input type="text" name="fname">
 									<option value="hotel">Hotel</option>
 									<option value="dorm">Dorm</option>
 									<option value="other">Other</option>
-								</select>
+								</select><p></p>
 							</div>
-							<div class="optional" class="form-group" id="hideOtherAddressType" style="display: none;" >
-								<label for="otherAddressType">Other Address Type</label><br />
-								<input class="reqd" size="20" id="otherAddressType" />
+							<div class="form-group" id="hideOtherAddressType" style="display: none;" >
+								<label for="otherAddressType">Other Address Type <span>*</span></label><br />
+								<input class="reqd" size="20" id="otherAddressType" /><p></p>
 							</div>
-
 
 							<div class="form-group">
-								<label for="streetAddress1">Street Address</label><br />
-								<input class="reqd" size="20" id="streetAddress1" /></div>
+								<label for="streetAddress">Street Address <span>*</span></label><br />
+								<input class="reqd" size="20" id="streetAddress" /><p></p>
+							</div>
 							<div class="form-group" id="buildPizza">
 								<label for="aptSteRoom">Apartment, suite, or room number</label><br /> <!--move buildPizza to below when done testing-->
 								<input class="optional" size="20" id="aptSteRoom" />&nbsp;
 							</div>
 							<div class="form-group">
-								<label for="city">City</label><br />
-								<input class="reqd" size="20" id="city" />
+								<label for="city">City <span>*</span></label><br />
+								<input class="reqd" size="20" id="city" /><p></p>
 							</div>
 							<div class="form-group">
-								<label for="state">State</label><br />
-								<input class="reqd" size="20" id="state" />
+								<label for="state">State <span>*</span></label><br />
+								<input class="reqd" size="20" id="state" /><p></p>
 							</div>
 							<div class="form-group">
-								<label for="zip">Zip Code</label><br />
-								<input class="reqd" size="20" id="zip" />
+								<label for="zip">Zip Code <span>*</span></label><br />
+								<input class="reqd" size="20" id="zip" /><p></p>
 							</div>
 							<div class="form-group">
-								<label for="phone">Phone Number</label><br />
-								<input class="reqd" size="20" id="phone" />
+								<label for="phone">Phone Number <span>*</span></label><br />
+								<input class="reqd" size="20" id="phone" /><p></p>
 							</div>
 							<div class="form-group">
-								<label for="myEmail">e-Mail</label><br />
-								<input class="reqd" size="20" id="myEmail" />
-							</div>
-							<p id = "err"></p>
+								<label for="myEmail">e-Mail <span>*</span></label><br />
+								<input class="reqd" size="20" id="myEmail" /><p></p>
+						</div>
 							
 							<div class="form-group">
 								<a id="btnBuildPizza" href="#buildPizza" type="submit" class="btn btn-default" role="button">Build my Pizza &nbsp; &raquo;</a>
 							</div>
 							
-
 						</fieldset> <!--orderToday-->
 
 
@@ -242,13 +241,13 @@ Name: <input type="text" name="fname">
 					</div> <!--end first column-->
 
 					<div class="col-md-6" >
-						<aside id="imageSet">
+						<!--<aside id="imageSet">
 							<a href="#"><img class="foodItems" src="images/newYork.jpe" alt="pizza pies" /></a>
 
 							<a href="#"><img class="foodItems" src="images/pies.jpe" alt="pizza pies" /></a>
 
 							<a href="#"><img class="foodItems" src="images/pizza.jpe" alt="pizza pies" /></a>
-						</aside>
+						</aside>-->
 
 						<fieldset class="fset" id="prepareBilling">
 							<legend><h2>Billing Information</h2></legend>
@@ -295,11 +294,11 @@ Name: <input type="text" name="fname">
 						<fieldset class="fset" id="creditCardInfo">
 							<legend><h2>Credit Card Information</h2></legend>
 							<div class="form-group">
-								<label for="creditCardNum">Credit Card Number</label><br />
+								<label for="creditCardNum">Credit Card Number <span>*</span></label><br />
 								<input size="20" id="creditCardNum" />
 							</div>
 							<div class="form-group">
-								<label for="CVV">CVV</label><br />
+								<label for="CVV">CVV <span>*</span></label><br />
 								<input size="20" id="CVV" />
 							</div>
 							<div class="form-group">
