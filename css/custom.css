@@ -1,11 +1,3 @@
-label span, input + p, select + p {
-	color: red;
-}
-.jumbotron {
-    background-image: url(../images/pizza.jpe);
-    background-repeat: no-repeat;
-    background-size: 100%;
-} 
 a.btn.btn-primary {
     background-color: orangered;
     border-color: orangered;
@@ -17,14 +9,25 @@ a.btn.btn-default {
     color: floralwhite;
     opacity: 10%;
 }
-.foodItems {
-	padding: 20px;
-	/*margin-right: 50px;*/
-
-}
 div.jumbotron h1 {
     color: floralwhite;
     text-shadow: 2px 3px #888888;
+}
+fieldset#prepareBilling, #creditCardInfo {
+	display: none;
+	padding-left:20px;
+}
+fieldset#buildPizza {
+	display: none;
+}
+/*h3 #thankyou {
+	font-size: 18pt;
+}*/
+#imageSet {
+	display: block;
+}
+label span, input + p, select + p {
+	color: red;
 }
 .container h2 {
 	padding-top: 20px;
@@ -33,9 +36,13 @@ div.jumbotron h1 {
 	padding-top: 10px;
 	font-weight: 600;
 }
-fieldset#visibilityPrepareBilling {
-	padding-left:20px;
+.foodItems {
+	padding: 20px;
+	/*margin-right: 50px;*/
 }
-.error {
-	color: red;
-}
+.jumbotron {
+    background-image: url(../images/pizza.jpe);
+    background-repeat: no-repeat;
+    background-size: 100%;
+} 
+
